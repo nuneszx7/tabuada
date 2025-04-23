@@ -35,20 +35,20 @@ public class TelaTabuada {
 		JLabel labelMultiplicando = new JLabel("Multiplicando:");
 		JLabel labelMinMultiplicador = new JLabel("Mínimo multiplicador:");	
 		JLabel labelMaxMultiplicador = new JLabel("Máximo multiplicador:");
-		JTextField textMultiplicando = new JTextField();
-		JTextField textMinMultiplicador = new JTextField();
-		JTextField textMaxMultiplicador = new JTextField();
+		JTextField txtMultiplicando = new JTextField();
+		JTextField txtMinMultiplicador = new JTextField();
+		JTextField txtMaxMultiplicador = new JTextField();
 		JButton buttonCalcular = new JButton("Calcular");
 		JButton buttonLimpar = new JButton("Limpar");
 
 				
 		// Definir posições e tamanhos dos componentes
 		labelMultiplicando.setBounds(20, 20, 150, 30);
-		textMultiplicando.setBounds(170, 20, 100, 30);
+		txtMultiplicando.setBounds(170, 20, 100, 30);
 		labelMinMultiplicador.setBounds(20, 60, 150, 30);
-		textMinMultiplicador.setBounds(170, 60, 100, 30);
+		txtMinMultiplicador.setBounds(170, 60, 100, 30);
 		labelMaxMultiplicador.setBounds(20, 100, 150, 30);
-		textMaxMultiplicador.setBounds(170, 100, 100, 30);
+		txtMaxMultiplicador.setBounds(170, 100, 100, 30);
 		buttonCalcular.setBounds(20, 140, 100, 30);
 		buttonLimpar.setBounds(130, 140, 100, 30);
 
@@ -66,9 +66,9 @@ public class TelaTabuada {
 		container.add(labelMultiplicando);
 		container.add(labelMinMultiplicador);
 		container.add(labelMaxMultiplicador);
-		container.add(textMultiplicando);
-		container.add(textMinMultiplicador);
-		container.add(textMaxMultiplicador);
+		container.add(txtMultiplicando);
+		container.add(txtMinMultiplicador);
+		container.add(txtMaxMultiplicador);
 		container.add(buttonCalcular);
 		container.add(buttonLimpar);
 		container.add(scrollTabuada);
@@ -81,9 +81,9 @@ public class TelaTabuada {
 						
 				
 			//Recuperei os valores digitados pelo usuario
-			String multiplicando = textMultiplicando.getText();
-			String min = textMinMultiplicador.getText();
-			String max = textMaxMultiplicador.getText();
+			String multiplicando = txtMultiplicando.getText();
+			String min = txtMinMultiplicador.getText();
+			String max = txtMaxMultiplicador.getText();
 			
 			
 			//Convertendo string para double
@@ -106,6 +106,22 @@ public class TelaTabuada {
 					
 		});
 
+		buttonLimpar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				txtMultiplicando.setText("");
+				txtMaxMultiplicador.setText("");
+				txtMinMultiplicador.setText("");
+				listTabuada.setListData(new String[0]);
+				txtMultiplicando.requestFocus();
+				
+				
+				
+			}
+		});
+		
+		
 
 		// Tornar a tela visível
 		frame.setVisible(true);

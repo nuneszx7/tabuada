@@ -1,6 +1,6 @@
 package br.dev.nunes.tabuada;
 
-import javax.swing.JFrame;
+//import javax.swing.JFrame;
 import javax.swing.JTextField;
 
 import br.dev.nunes.tabuada.gui.TelaTabuada;
